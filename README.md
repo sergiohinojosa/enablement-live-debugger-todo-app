@@ -2,6 +2,8 @@
 
 A sample app for debugging Java code using Dynatrace
 
+For the simplest setup, use with GitHub codespaces. Docker in Docker is configured so the Java application can be started within the codespace. Port 8080 is exposed in order to access the application from your local machine.
+
 ## Setup
 
 1. Clone the sample app from this repository:
