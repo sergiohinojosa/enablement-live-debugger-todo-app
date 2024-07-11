@@ -6,17 +6,22 @@ For the simplest setup, use with GitHub codespaces. Docker in Docker is configur
 
 ## Setup
 
-1. Clone the sample app from this repository:
+1. Clone the sample app from this repository or spin up an environment using codespaces:
 
 ```bash
 git clone https://github.com/jhendrick/tutorial-java-workshop.git
 cd tutorial-java-workshop
-``` 
+```
+Note, even if you use codespaces, you will need to clone the repository locally in order to connect the source code repo later in the live debugger.
 
-2. Update the Dockerfile with your Dynatrace environment URL
+2. Update the Dockerfile with your Dynatrace environment URL and custom label
 
 ```bash
 ENV DT_ENVIRONMENT_URL={environmentID}.live.dynatrace.com
+ ```
+
+```bash
+ENV DT_LIVEDEBUGGER_LABELS=name:value
  ```
 
 3. Sign in to Docker with your Dynatrace environment ID as username.
