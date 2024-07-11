@@ -17,7 +17,7 @@ Note, even if you use codespaces, you will need to clone the repository locally 
 2. Update the Dockerfile with your Dynatrace environment URL and custom label
 
 ```bash
-ENV DT_ENVIRONMENT_URL={environmentID}.live.dynatrace.com
+For example: <environmentURL> could be {environmentID}.live.dynatrace.com
  ```
 
 ```bash
