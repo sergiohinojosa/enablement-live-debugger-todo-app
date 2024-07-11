@@ -16,7 +16,7 @@ cd tutorial-java-workshop
 2. Update the Dockerfile with your Dynatrace environment URL
 
 ```bash
-ENV DT_ENVIRONMENT_URL={yourenvid}.live.dynatrace.com
+ENV DT_ENVIRONMENT_URL={environmentID}.live.dynatrace.com
  ```
 
 3. Sign in to Docker with your Dynatrace environment ID as username.
