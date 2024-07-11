@@ -14,7 +14,7 @@ FROM openjdk:8-jdk as release
 # environmentURL=beq06176.dev.dynatracelabs.com
 # TECHNOLOGY=java
 
-COPY --from=<environmentURL>/linux/oneagent-codemodules:<TECHNOLOGY> / /
+COPY --from=<environmentURL>/linux/oneagent-codemodules:java / /
 ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 ENV DT_LIVEDEBUGGER_LABELS=app:josh 
