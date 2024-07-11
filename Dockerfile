@@ -10,10 +10,11 @@ RUN ./gradlew -i bootJar
 
 FROM openjdk:8-jdk as release
 
-ENV DT_ENVIRONMENT_URL=pjw27103.dev.dynatracelabs.com
-ENV DT_ONEAGENT_TECHNOLOGY=java
+# Examples:
+# environmentURL=beq06176.dev.dynatracelabs.com
+# TECHNOLOGY=java
 
-COPY --from=$DT_ENVIRONMENT_URL/linux/oneagent-codemodules:$DT_ONEAGENT_TECHNOLOGY / /
+COPY --from=<environmentURL>/linux/oneagent-codemodules:<TECHNOLOGY> / /
 ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
 
 ENV DT_LIVEDEBUGGER_LABELS=app:josh 
