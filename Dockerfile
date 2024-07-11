@@ -10,7 +10,7 @@ RUN ./gradlew -i bootJar
 
 FROM openjdk:8-jdk as release
 
-# Examples:
+# Update <environmentURL> below. Make sure to remove the < >:
 # environmentURL=beq06176.dev.dynatracelabs.com
 # TECHNOLOGY=java
 
