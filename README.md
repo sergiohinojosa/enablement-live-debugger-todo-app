@@ -45,3 +45,5 @@ docker run -p 8080:8080 tutorial-java-workshop
 ```
 
 6. Open the app at http://localhost:8080
+
+7. You can set a breakpoint in TodoController on line 32 (or anywhere in the addTodo() function
