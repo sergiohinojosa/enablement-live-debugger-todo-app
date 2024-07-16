@@ -11,7 +11,7 @@ RUN ./gradlew -i bootJar
 FROM openjdk:8-jdk as release
 
 # Update <environmentURL> below. Make sure to remove the < >:
-# environmentURL=beq06176.dev.dynatracelabs.com
+# environmentURL=mss33078.dev.dynatracelabs.com
 # TECHNOLOGY=java
 
 COPY --from=<environmentURL>/linux/oneagent-codemodules:java / /
