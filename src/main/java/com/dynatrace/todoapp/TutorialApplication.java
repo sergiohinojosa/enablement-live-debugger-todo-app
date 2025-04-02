@@ -1,4 +1,4 @@
-package com.rookout.tutorial;
+package com.dynatrace.todoapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

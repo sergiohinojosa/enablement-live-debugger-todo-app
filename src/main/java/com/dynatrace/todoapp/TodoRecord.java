@@ -1,4 +1,4 @@
-package com.rookout.tutorial;
+package com.dynatrace.todoapp;
 
 public class TodoRecord {
     private String title;

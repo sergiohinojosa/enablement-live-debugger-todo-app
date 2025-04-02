@@ -1,4 +1,4 @@
-package com.rookout.tutorial;
+package com.dynatrace.todoapp;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

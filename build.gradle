@@ -25,9 +25,9 @@ apply plugin: 'com.palantir.git-version'
 
 def details = versionDetails()
 
-mainClassName = "com.rookout.tutorial.TutorialApplication"
+mainClassName = "com.dynatrace.todoapp.TutorialApplication"
 
-group = 'com.rookout'
+group = 'com.dynatrace'
 version = '1.0.0'
 sourceCompatibility = 8
 
@@ -68,7 +68,7 @@ class Download extends DefaultTask {
     }
 }
 
-
+/*
 task downloadRookout(type: Download) {
     sourceUrl = "https://oss.sonatype.org/service/local/repositories/releases/content/com/rookout/rook/0.1.263/rook-0.1.263.jar"
     target = new File('rook.jar')
@@ -85,6 +85,7 @@ bootJar {
 
 bootJar.dependsOn downloadRookout
 
-run {
-    jvmArgs += ["-javaagent:rook.jar"]
-}
+//run {
+//    jvmArgs += ["-javaagent:rook.jar"]
+//}
+*/
