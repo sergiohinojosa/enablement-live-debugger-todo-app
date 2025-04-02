@@ -48,8 +48,8 @@ dependencies {
     compile("org.slf4j:slf4j-api:1.7.30")
 
     compile("org.yaml:snakeyaml:1.26")
-    // tracing support
-    compile group: 'io.opentracing.contrib', name: 'opentracing-spring-jaeger-web-starter', version: '3.3.1'
+    // we disable tracing
+    //compile group: 'io.opentracing.contrib', name: 'opentracing-spring-jaeger-web-starter', version: '3.3.1'
     
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
