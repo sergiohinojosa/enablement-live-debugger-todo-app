@@ -47,12 +47,12 @@ thinline="______________________________________________________________________
 LOGNAME="dynatrace.enablement"
 
 # LabGuidePort
-LABGUIDEPORT=3000
-ASTROSHOPPORT=8080
+LABGUIDEPORT=8000
+WEBAPPPORT=8080
 if [[ $CODESPACES == true ]]; then
   LAB_GUIDE_URL="https://${CODESPACE_NAME}-$LABGUIDEPORT.app.github.dev"
-  ASTROSHOP_URL="https://${CODESPACE_NAME}-$ASTROSHOPPORT.app.github.dev"
+  WEBAPP_URL="https://${CODESPACE_NAME}-$WEBAPPPORT.app.github.dev"
 else
   LAB_GUIDE_URL="https://localhost:$LABGUIDEPORT"
-  ASTROSHOP_URL="http://localhost:$ASTROSHOPPORT"
+  WEBAPP_URL="http://localhost:$WEBAPPPORT"
 fi

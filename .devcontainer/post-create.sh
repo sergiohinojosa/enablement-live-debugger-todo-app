@@ -18,13 +18,15 @@ createKindCluster
 
 installK9s
 
-#certmanagerInstall
-#certmanagerEnable
+installDockstack
 
-#dynatraceEvalReadSaveCredentials
-#dynatraceDeployOperator
-waitForAllPods
+dynatraceEvalReadSaveCredentials
 
+dynatraceDeployOperator
+
+waitForAllPods dynatrace
+
+deployTodoApp
 
 # e2e testing
 # If the codespace is created (eg. via a Dynatrace workflow)
@@ -50,8 +52,8 @@ if [[ "$CODESPACE_NAME" == dttest-* ]]; then
 else
 
     # Your content here
-    printInfo "Sending BizEvent to track usage of enablement-live-debugger-todo-app"
-    postCodespaceTracker enablement-live-debugger-todo-app
+    printWarn "UNCOMMENT BizEvent to start gathering - Sending BizEvent to track usage of enablement-live-debugger-todo-app"
+    #postCodespaceTracker enablement-live-debugger-todo-app
 
     printInfo "Finished creating"
 fi

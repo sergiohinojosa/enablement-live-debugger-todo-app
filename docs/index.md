@@ -1,4 +1,4 @@
-# PLACEHOLDER TITLE HERE
+# Live Debugger Enablement - Bug Hunting in the Todo App
 
 --8<-- "snippets/disclaimer.md"
 --8<-- "snippets/view-code.md"
@@ -10,6 +10,14 @@
 --8<-- "snippets/e2e-sample.sh:shebang"
 --8<-- "snippets/e2e-sample.sh:SayFirstHello"
 ```
+
+something else
+
+```shell
+--8<-- "snippets/e2e-sample.sh:shebang"
+--8<-- "snippets/e2e-sample.sh:SaySecondHello"
+```
+
 
 ## Say Second Hello (without Shebang)
 

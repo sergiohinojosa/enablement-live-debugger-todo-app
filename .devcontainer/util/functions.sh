@@ -438,6 +438,17 @@ exposeAstroshop(){
   nohup kubectl port-forward service/astroshop-frontendproxy 8080:8080  -n astroshop --address="0.0.0.0" > /tmp/kubectl-port-forward.log 2>&1 &
 }
 
+exposeTodoApp(){
+  printInfo "Exposing Astroshop in your dev.container"
+  nohup kubectl port-forward service/todoapp 8080:8080  -n todoapp --address="0.0.0.0" > /tmp/kubectl-port-forward.log 2>&1 &
+}
+
+installDockstack(){
+  printInfo "Installing Dockstack"
+  # We use --break-system-packages to overcome warning of system wide modification. We are in a container.
+  pip install --break-system-packages -r requirements-docs.txt
+}
+
 exposeLabguide(){
   printInfo "Exposing Lab Guide in your dev.container"
   cd $CODESPACE_VSCODE_FOLDER/lab-guide/
@@ -445,11 +456,28 @@ exposeLabguide(){
   cd -
 }
 
+exposeMkdocs(){
+  nohup mkdocs serve -a localhost:8000 > /dev/null 2>&1 &
+}
+
 buildLabGuide(){
   printInfoSection "Building the Lab-guide in port 3000"
   cd $CODESPACE_VSCODE_FOLDER/lab-guide/
   node bin/generator.js
   cd -
+}
+
+deployTodoApp(){
+
+  printInfoSection "Deploying Todo App"
+  kubectl create ns todoapp
+  
+  # Create deployment of TODO App
+  kubectl -n todoapp create deploy todoapp --image=shinojosa/todoapp:1.0.0
+
+  # Expose deployment of TODO App with a Service
+  kubectl -n todoapp expose deployment todoapp --type=NodePort --port=8080 --name todoapp
+
 }
 
 deployAstroshop(){
@@ -498,11 +526,19 @@ deleteCodespace(){
 
 showMessage(){
   printInfo "Lab guide exposed in $LAB_GUIDE_URL"
-  printInfo "Astroshop exposed in $ASTROSHOP_URL"
+  printInfo "Astroshop exposed in $WEBAPP_URL"
 }
 
 showOpenPorts(){
   sudo netstat -tulnp
   # another alternative is 
   # sudo ss -tulnp
+}
+
+deployWebApp(){
+  deployTodoApp
+}
+
+exposeWebApp(){
+  exposeTodoApp
 }
