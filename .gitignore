@@ -138,3 +138,28 @@ gradle-app.setting
 .classpath
 bin/
 test/
+
+
+# mkdocs renders static files in site
+# ignore them and do not commit to Git
+site/*
+
+# temp files
+*-tmp*
+
+# No generated file
+**/gen/*/*.yaml
+
+**/gen/**.yaml
+
+**-gen.yaml
+# loc files
+**-loc**
+# No mounted file shares
+**sshfs**
+# No DS Store files
+.DS_Store
+
+# No tmp folders
+**tmp**
+**/tmp/**
